@@ -57,7 +57,7 @@ namespace ShooterProject.Models
 
         public void Fire()
         {
-            var time = MaxBullet / FullShootingTime * BulletNow;
+            var time = (MaxBullet / FullShootingTime) * BulletNow;
             BulletNow = 0;
             Console.WriteLine(time);
         }

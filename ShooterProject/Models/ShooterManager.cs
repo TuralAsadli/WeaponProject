@@ -97,11 +97,38 @@ namespace ShooterProject.Models
 
         public Weapon CreateWeapon()
         {
-            Console.WriteLine(CreateMenu[0]);
-            int maxBullet = Convert.ToInt32(Console.ReadLine());
+            int maxBullet;
+            while (true)
+            {
+                Console.WriteLine(CreateMenu[0]);
+                maxBullet = Convert.ToInt32(Console.ReadLine());
+                if (maxBullet > 0)
+                {
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("wrong input");
+                }
+            }
+            
 
-            Console.WriteLine(CreateMenu[1]);
-            int bulletE = Convert.ToInt32(Console.ReadLine());
+            int bulletE;
+            while (true)
+            {
+                Console.WriteLine(CreateMenu[1]);
+                bulletE = Convert.ToInt32(Console.ReadLine());
+                if (bulletE > maxBullet)
+                {
+                    Console.WriteLine("Not enought place, write again");
+                }
+                else
+                {
+                    break;
+                }
+            }
+            
+            
 
             Console.WriteLine(CreateMenu[2]);
             int fireTime = Convert.ToInt32(Console.ReadLine());
